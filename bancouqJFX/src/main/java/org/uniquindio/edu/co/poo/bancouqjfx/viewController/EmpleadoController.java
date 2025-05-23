@@ -1,0 +1,68 @@
+package org.uniquindio.edu.co.poo.bancouqjfx.viewController;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import org.uniquindio.edu.co.poo.bancouqjfx.model.Empleado;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmpleadoController {
+
+    @FXML
+    private TextField nombreField;
+    @FXML
+    private TextField apellidoField;
+    @FXML
+    private TextField cedulaField;
+    @FXML
+    private ListView<Empleado> listaEmpleados;
+
+    private List<Empleado> empleados = new ArrayList<>();
+
+    @FXML
+    public void registrarEmpleado() {
+        String nombre = nombreField.getText();
+        String apellido = apellidoField.getText();
+        String cedula = cedulaField.getText();
+
+        if (!nombre.isEmpty() && !apellido.isEmpty() && !cedula.isEmpty()) {
+            Empleado empleado = new Empleado(nombre, apellido, cedula);
+            empleados.add(empleado);
+            actualizarLista();
+            limpiarCampos();
+        }
+    }
+
+    @FXML
+    public void modificarEmpleado() {
+        Empleado seleccionado = listaEmpleados.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            seleccionado.setNombre(nombreField.getText());
+            seleccionado.setApellido(apellidoField.getText());
+            seleccionado.setCedula(cedulaField.getText());
+            actualizarLista();
+            limpiarCampos();
+        }
+    }
+
+    @FXML
+    public void eliminarEmpleado() {
+        Empleado seleccionado = listaEmpleados.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            empleados.remove(seleccionado);
+            actualizarLista();
+            limpiarCampos();
+        }
+    }
+
+    private void actualizarLista() {
+        listaEmpleados.getItems().setAll(empleados);
+    }
+
+    private void limpiarCampos() {
+        nombreField.clear();
+        apellidoField.clear();
+        cedulaField.clear();
+    }
+}

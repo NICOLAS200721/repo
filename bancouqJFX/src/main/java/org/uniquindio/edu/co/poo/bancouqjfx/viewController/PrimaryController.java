@@ -25,4 +25,9 @@ public class PrimaryController {
     public void onOpenCuenta() {
         app.openCuentaView();
     }
+
+    @FXML
+    public void onOpenEmpleadoView() {
+        app.openEmpleadoView();
+    }
 }

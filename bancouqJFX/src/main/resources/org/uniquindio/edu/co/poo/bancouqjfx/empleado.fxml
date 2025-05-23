@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.EmpleadoController"
+            prefWidth="600" prefHeight="400">
+
+    <VBox spacing="10" layoutX="20" layoutY="20">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <HBox spacing="10">
+            <TextField fx:id="nombreField" promptText="Nombre"/>
+            <TextField fx:id="apellidoField" promptText="Apellido"/>
+            <TextField fx:id="cedulaField" promptText="Cédula"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Button text="Registrar" onAction="#registrarEmpleado"/>
+            <Button text="Modificar" onAction="#modificarEmpleado"/>
+            <Button text="Eliminar" onAction="#eliminarEmpleado"/>
+        </HBox>
+
+        <ListView fx:id="listaEmpleados" prefHeight="250"/>
+    </VBox>
+
+</AnchorPane>

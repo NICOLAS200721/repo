@@ -28,8 +28,8 @@ public class App extends Application {
         inicializarData();
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("primary.fxml"));
-            AnchorPane rootLayout = loader.load(); // 👈 CAMBIO AQUÍ
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/primary.fxml"));
+            AnchorPane rootLayout = loader.load();
 
             PrimaryController primaryController = loader.getController();
             primaryController.setApp(this);
@@ -45,10 +45,8 @@ public class App extends Application {
     public void openCrudCliente() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("crudCliente.fxml"));
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/crudCliente.fxml"));
             AnchorPane rootLayout = loader.load();
-            // ClienteViewController controller = loader.getController();
-            // controller.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -61,7 +59,7 @@ public class App extends Application {
     public void openTransaccionView() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("transaccionview.fxml"));
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/transaccionview.fxml"));
             AnchorPane rootLayout = loader.load();
 
             TransaccionController controller = loader.getController();
@@ -79,14 +77,29 @@ public class App extends Application {
         Cliente cliente = new Cliente("Juan", "Pérez", "1223", "juanp@gmail.com", "254695");
         banco.agregarCliente(cliente);
     }
+
     public void openCuentaView() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("cuenta.fxml"));
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/agregarCuenta.fxml"));
             AnchorPane rootLayout = loader.load();
 
             CuentaController controller = loader.getController();
             controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openEmpleadoView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/empleado.fxml"));
+            AnchorPane rootLayout = loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
