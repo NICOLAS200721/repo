@@ -3,7 +3,9 @@ package org.uniquindio.edu.co.poo.bancouqjfx.viewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import org.uniquindio.edu.co.poo.bancouqjfx.App;
 import org.uniquindio.edu.co.poo.bancouqjfx.model.Empleado;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +21,12 @@ public class EmpleadoController {
     private ListView<Empleado> listaEmpleados;
 
     private List<Empleado> empleados = new ArrayList<>();
+
+    private App app; // Instancia de App
+
+    public void setApp(App app) {
+        this.app = app;
+    }
 
     @FXML
     public void registrarEmpleado() {
@@ -53,6 +61,13 @@ public class EmpleadoController {
             empleados.remove(seleccionado);
             actualizarLista();
             limpiarCampos();
+        }
+    }
+
+    @FXML
+    public void volverAPrincipal() {
+        if (app != null) {
+            app.openViewPrincipal();
         }
     }
 

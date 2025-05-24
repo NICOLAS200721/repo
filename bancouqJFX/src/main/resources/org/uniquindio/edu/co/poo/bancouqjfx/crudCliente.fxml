@@ -54,8 +54,9 @@
                                 <TableColumn fx:id="tbcApellido" prefWidth="75.0" text="Apellido" />
                             </columns>
                         </TableView>
-                        <Button fx:id="btnLimpiar" layoutX="93.0" layoutY="223.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
-                        <Button fx:id="btnEliminar" layoutX="234.0" layoutY="223.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                        <Button fx:id="btnLimpiar" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" text="Limpiar" />
+                        <Button fx:id="btnEliminar" layoutX="175.0" layoutY="226.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" text="Eliminar" />
+                        <Button layoutX="323.0" layoutY="226.0" onAction="#volverAPrincipal" text="Volver" />
                     </children>
                 </AnchorPane>
             </items>

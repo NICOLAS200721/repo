@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500" prefWidth="400" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.TransaccionController">
+<AnchorPane prefHeight="500" prefWidth="400" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.TransaccionController">
 
     <TextField fx:id="txtCuentaOrigen" layoutX="50" layoutY="30" promptText="Cuenta Origen" />
     <TextField fx:id="txtCuentaDestino" layoutX="50" layoutY="80" promptText="Cuenta Destino" />
@@ -12,6 +12,7 @@
     <Button fx:id="btnTransferir" layoutX="50" layoutY="180" onAction="#realizarTransaccion" text="Transferir" />
     <Button fx:id="btnEliminar" layoutX="135" layoutY="180" onAction="#eliminarTransaccion" text="Eliminar" />
     <Button fx:id="btnActualizar" layoutX="220" layoutY="180" onAction="#actualizarTransaccion" text="Actualizar" />
+    <Button layoutX="168.0" layoutY="466.0" onAction="#volverAPrincipal" text="Volver" />
 
     <Label fx:id="lblResultado" layoutX="50" layoutY="220" text="Resultado..." />
     <TextArea fx:id="areaHistorial" layoutX="50" layoutY="260" prefHeight="200" prefWidth="300" />

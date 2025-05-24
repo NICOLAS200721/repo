@@ -108,4 +108,10 @@ public class CuentaController {
         txtSaldo.clear();
         listaCuentas.getSelectionModel().clearSelection();
     }
+    @FXML
+    public void volverAPrincipal() {
+        if (app != null) {
+            app.openViewPrincipal();
+        }
+    }
 }

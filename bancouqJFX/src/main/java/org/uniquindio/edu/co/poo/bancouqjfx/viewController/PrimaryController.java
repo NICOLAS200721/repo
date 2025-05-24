@@ -5,7 +5,7 @@ import org.uniquindio.edu.co.poo.bancouqjfx.App;
 
 public class PrimaryController {
 
-    private App app;
+    public App app;
 
     public void setApp(App app) {
         this.app = app;
@@ -29,5 +29,11 @@ public class PrimaryController {
     @FXML
     public void onOpenEmpleadoView() {
         app.openEmpleadoView();
+    }
+
+
+    @FXML
+    public void abrirConsultaSaldo() {
+        app.openConsultaSaldoView();
     }
 }

@@ -86,6 +86,13 @@ public class ClienteViewController {
         clienteController = new ClienteController(app.banco);
         initView();
     }
+    @FXML
+    public void volverAPrincipal() {
+        if (app != null) {
+            app.openViewPrincipal();
+        }
+    }
+
 
     private void initView() {
         // Traer los datos del cliente a la tabla

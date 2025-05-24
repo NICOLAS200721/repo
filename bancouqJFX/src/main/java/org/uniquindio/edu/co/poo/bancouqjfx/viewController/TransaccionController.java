@@ -110,4 +110,10 @@ public class TransaccionController {
 
         lblResultado.setText("❌ Transacción no encontrada para actualizar.");
     }
+    @FXML
+    public void volverAPrincipal() {
+        if (app != null) {
+            app.openViewPrincipal();
+        }
+    }
 }

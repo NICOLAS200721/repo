@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.ConsultaSaldoController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Consultar Saldo" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Label text="Número de Cuenta:"/>
+    <TextField fx:id="identificadorField" promptText="Ingrese número de cuenta"/>
+
+    <Button text="Consultar" onAction="#consultarSaldo"/>
+
+    <Label fx:id="saldoLabel" style="-fx-font-size: 16px;"/>
+
+    <Button text="Volver" onAction="#volverAPrincipal"/>
+</VBox>
