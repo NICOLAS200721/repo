@@ -64,12 +64,12 @@ public class EmpleadoController {
         }
     }
 
-    @FXML
-    public void volverAPrincipal() {
-        if (app != null) {
-            app.openViewPrincipal();
-        }
-    }
+//    @FXML
+//    public void volverAPrincipal() {
+//        if (app != null) {
+//            app.openViewPrincipal();
+//        }
+//    }
 
     private void actualizarLista() {
         listaEmpleados.getItems().setAll(empleados);

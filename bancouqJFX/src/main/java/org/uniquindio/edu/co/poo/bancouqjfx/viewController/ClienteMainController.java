@@ -19,17 +19,19 @@ public class ClienteMainController {
         this.app = app;
         cargarCrudCliente();
     }
-    @FXML
-    public void volverAPrincipal() {
-        if (app != null) {
-            app.openViewPrincipal();
-        }
-    }
+//    @FXML
+//    public void volverAPrincipal() {
+//        if (app != null) {
+//            app.openViewPrincipal();
+//        }
+// }
     @FXML
     private void volverAlMenuCliente() {
         // Aquí llamamos a la vista principal del cliente
         app.openClienteMainView();
     }
+
+
 
 
     // Carga el CRUD cliente dentro del panel

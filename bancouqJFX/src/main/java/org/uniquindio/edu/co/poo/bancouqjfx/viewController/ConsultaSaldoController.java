@@ -50,10 +50,10 @@ public class ConsultaSaldoController {
         return null;
     }
 
-    @FXML
-    public void volverAPrincipal() {
-        if (app != null) {
-            app.openViewPrincipal();
-        }
-    }
+//    @FXML
+//    public void volverAPrincipal() {
+//        if (app != null) {
+//            app.openViewPrincipal();
+//        }
+//    }
 }

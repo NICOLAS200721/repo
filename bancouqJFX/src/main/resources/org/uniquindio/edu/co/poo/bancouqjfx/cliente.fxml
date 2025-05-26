@@ -24,7 +24,7 @@
         <Button text="Realizar Transacciones" onAction="#abrirTransacciones"/>
         <Button text="Consultar Saldo" onAction="#abrirConsultaSaldo"/>
         <Button text="Crear Cuenta" onAction="#abrirCrearCuenta"/>
-        <Button layoutX="168.0" layoutY="466.0" onAction="#loguearUsuario" text="Volver" />
+
 
     </HBox>
 

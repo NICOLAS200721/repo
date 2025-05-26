@@ -86,7 +86,7 @@ public class SeleccionUsuarioController {
         if (CLIENTE.equals(tipoUsuario)) {
             app.openRegistroClienteView();
         } else if (ADMINISTRADOR.equals(tipoUsuario)) {
-            app.openEmpleadoView(); // Abre vista de registro de empleado (que puede ser admin)
+            app.openRegistroAdministradorView(); // Abre vista de registro de empleado (que puede ser admin)
         } else {
             mostrarAlerta("Información", "Registro no disponible para " + tipoUsuario);
         }

@@ -86,12 +86,12 @@ public class ClienteViewController {
         clienteController = new ClienteController(app.banco);
         initView();
     }
-    @FXML
-    public void volverAPrincipal() {
-        if (app != null) {
-            app.openViewPrincipal();
-        }
-    }
+//    @FXML
+//    public void volverAPrincipal() {
+//        if (app != null) {
+//            app.openViewPrincipal();
+//        }
+//    }
 
 
     private void initView() {

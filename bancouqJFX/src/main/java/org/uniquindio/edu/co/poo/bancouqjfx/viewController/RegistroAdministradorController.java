@@ -13,12 +13,13 @@ public class RegistroAdministradorController {
     }
 
     @FXML
-    private TextField txtUsuario;
+    private TextField txtCorreo;
 
     @FXML
     private PasswordField txtContrasena;
 
     private AdministradorMainController adminMainController;
+
 
     public void setAdministradorMainController(AdministradorMainController controller) {
         this.adminMainController = controller;
@@ -31,7 +32,7 @@ public class RegistroAdministradorController {
 
     @FXML
     public void registrarAdmin() {
-        String usuario = txtUsuario.getText().trim();
+        String usuario = txtCorreo.getText().trim();
         String contrasena = txtContrasena.getText();
 
         if (usuario.isEmpty() || contrasena.isEmpty()) {
@@ -52,7 +53,7 @@ public class RegistroAdministradorController {
     }
 
     private void cerrarVentana() {
-        Stage stage = (Stage) txtUsuario.getScene().getWindow();
+        Stage stage = (Stage) txtCorreo.getScene().getWindow();
         stage.close();
     }
 

@@ -60,28 +60,28 @@ public class App extends Application {
                 openCajeroMainView();
                 break;
             default:
-                openViewPrincipal();
+                //openViewPrincipal();
                 break;
         }
     }
-
-    public void openViewPrincipal() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/primary.fxml"));
-            Parent rootLayout = loader.load();
-
-            PrimaryController primaryController = loader.getController();
-            primaryController.setApp(this);
-
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("Vista Principal");
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//
+//    public void openViewPrincipal() {
+//        try {
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/primary.fxml"));
+//            Parent rootLayout = loader.load();
+//
+//            PrimaryController primaryController = loader.getController();
+//            primaryController.setApp(this);
+//
+//            Scene scene = new Scene(rootLayout);
+//            primaryStage.setScene(scene);
+//            primaryStage.setTitle("Vista Principal");
+//            primaryStage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void openCrudCliente() {
         try {
@@ -244,26 +244,26 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
-    public void volverAlInicioSegunTipoUsuario(String tipoUsuario) {
-        switch (tipoUsuario.toLowerCase()) {
-            case "cliente":
-                openClienteMainView();
-                break;
-            case "administrador":
-                openAdministradorMainView();
-                break;
-            case "cajero":
-                openCajeroMainView();
-                break;
-            default:
-                openViewPrincipal();
-                break;
-        }
-    }
+//    public void volverAlInicioSegunTipoUsuario(String tipoUsuario) {
+//        switch (tipoUsuario.toLowerCase()) {
+//            case "cliente":
+//                openClienteMainView();
+//                break;
+//            case "administrador":
+//                openAdministradorMainView();
+//                break;
+//            case "cajero":
+//                openCajeroMainView();
+//                break;
+//            default:
+//                openViewPrincipal();
+//                break;
+//        }
+//    }
     public void openRegistroAdministradorView() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/registrarAdministrador.fxml"));
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/registrarAdmin.fxml"));
             Parent rootLayout = loader.load();
 
             RegistroAdministradorController controller = loader.getController();
