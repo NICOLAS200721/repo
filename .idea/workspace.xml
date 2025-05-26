@@ -4,37 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79a5e491-fe20-4312-86f2-845f8178b14b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Consultorio/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/src/main/java/org/uniquindio/edu/co/poo/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/src/main/java/org/uniquindio/edu/co/poo/model/Consultorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/src/main/java/org/uniquindio/edu/co/poo/model/Especialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/src/main/java/org/uniquindio/edu/co/poo/model/Odontologo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Consultorio/src/main/java/org/uniquindio/edu/co/poo/model/Paciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/src/main/java/org/uniquindio/edu/co/poo/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/src/main/java/org/uniquindio/edu/co/poo/model/Parqueadero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parqueadero/src/main/java/org/uniquindio/edu/co/poo/model/Vehiculo.java" afterDir="false" />
-    </list>
+    <list default="true" id="79a5e491-fe20-4312-86f2-845f8178b14b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Consultorio" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2vEeKzmDKNAUOBocZuQbSDdbvu6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,23 +27,16 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/home/Downloads/programacion uno/repo/Batallon",
+    "last_opened_file_path": "/home/dalejo90/IdeaProjects/repo/bancouqJFX",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

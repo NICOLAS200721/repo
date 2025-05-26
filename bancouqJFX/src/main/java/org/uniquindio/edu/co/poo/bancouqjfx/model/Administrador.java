@@ -5,10 +5,14 @@ import java.util.LinkedList;
 
 public class Administrador extends Persona {
     private Collection<Cliente> clientes;
+    private String correo;
+    private String contraseña;
 
-    public Administrador(String nombre, String apellido, String cedula, Collection<Cliente> clientes) {
+    public Administrador(String nombre, String apellido, String cedula, Collection<Cliente> clientes, String correo, String contraseña) {
         super(nombre, apellido, cedula);
         clientes = new LinkedList<>();
+        this.correo = correo;
+        this.contraseña = contraseña;
     }
 
 
@@ -55,5 +59,22 @@ public class Administrador extends Persona {
             }
         }
         return centinela;
+    }
+
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 }

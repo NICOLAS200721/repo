@@ -18,7 +18,7 @@ public class RegistroAdministradorController {
     @FXML
     private PasswordField txtContrasena;
 
-    private AdministradorMainController adminMainController;
+    private AdministradorMainController adminMainController = new AdministradorMainController();
 
 
     public void setAdministradorMainController(AdministradorMainController controller) {
@@ -49,7 +49,7 @@ public class RegistroAdministradorController {
         adminMainController.agregarAdministrador(usuario, contrasena);
         mostrarAlerta("Éxito", "Administrador registrado correctamente.", Alert.AlertType.INFORMATION);
 
-        cerrarVentana();
+        app.openSeleccionUsuarioView();
     }
 
     private void cerrarVentana() {

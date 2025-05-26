@@ -29,7 +29,7 @@ public class App extends Application {
     public void openSeleccionUsuarioView() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/seleccionusuario.fxml"));
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/SeleccionUsuario.fxml"));
             Parent rootLayout = loader.load();
 
             SeleccionUsuarioController controller = loader.getController();

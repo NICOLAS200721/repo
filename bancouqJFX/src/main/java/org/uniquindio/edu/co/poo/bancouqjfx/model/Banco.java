@@ -7,12 +7,14 @@ import org.uniquindio.edu.co.poo.bancouqjfx.model.GestorTransacciones.Transaccio
 public class Banco {
     public String nombre;
     public Collection<Cliente> clientes;
+    public Collection<Administrador> administradores;
     public List<Transaccion> historialTransacciones;
     public Collection<CuentaBancaria> listaCuentas;
 
     public Banco(String nombre) {
         this.nombre = nombre;
         clientes = new LinkedList<>();
+        administradores = new LinkedList<>();
         historialTransacciones = new ArrayList<>();
         listaCuentas = new LinkedList<>();
     }
@@ -86,6 +88,34 @@ public class Banco {
         return null;
     }
 
+    public boolean agregarAdmin(Administrador administrador) {
+        if (!verificarAdmin(administrador.getCorreo())) {
+            administradores.add(administrador);
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean verificarAdmin(String correo) {
+        for (Administrador administrador : administradores) {
+            if (administrador.getCorreo().equals(correo)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Nuevo método para buscar admin por correo
+    public Administrador buscarAdminPorCorreo(String correo) {
+        if (correo == null) return null;
+        for (Administrador administrador : administradores) {
+            if (correo.equalsIgnoreCase(administrador.getCorreo())) {
+                return administrador;
+            }
+        }
+        return null;
+    }
     // Métodos para cuentas bancarias
     public Collection<CuentaBancaria> getListaCuentas() {
         return listaCuentas;

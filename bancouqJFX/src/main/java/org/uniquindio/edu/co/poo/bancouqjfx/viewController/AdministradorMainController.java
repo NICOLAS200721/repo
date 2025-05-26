@@ -1,5 +1,6 @@
 package org.uniquindio.edu.co.poo.bancouqjfx.viewController;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.uniquindio.edu.co.poo.bancouqjfx.App;
+import org.uniquindio.edu.co.poo.bancouqjfx.model.Administrador;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -97,12 +99,11 @@ public class AdministradorMainController {
     }
 
     public boolean existeAdministrador(String usuario) {
-        return administradores.stream()
-                .anyMatch(admin -> admin.usuario.equalsIgnoreCase(usuario));
+        return app.banco.verificarAdmin(usuario);
     }
 
     public void agregarAdministrador(String usuario, String contrasena) {
-        administradores.add(new AdminSimple(usuario, contrasena));
+        app.banco.agregarAdmin(new Administrador("", "", "", null, usuario, contrasena ));
     }
 
     private void mostrarError(String mensaje) {
@@ -119,5 +120,31 @@ public class AdministradorMainController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void onOpenCrudClientes() {
+        app.openCrudCliente();
+    }
+
+    @FXML
+    public void onOpenTransacciones() {
+        app.openTransaccionView();
+    }
+
+    @FXML
+    public void onOpenCuenta() {
+        app.openCuentaView();
+    }
+
+    @FXML
+    public void onOpenEmpleadoView() {
+        app.openEmpleadoView();
+    }
+
+
+    @FXML
+    public void abrirConsultaSaldo() {
+        app.openConsultaSaldoView();
     }
 }

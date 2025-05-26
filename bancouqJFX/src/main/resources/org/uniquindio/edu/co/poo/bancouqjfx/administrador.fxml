@@ -10,10 +10,9 @@
     <Label text="Panel Administrador" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
     <HBox spacing="10">
-        <Button text="Registrar Cliente" onAction="#abrirRegistroCliente"/>
-        <Button text="Gestionar Empleados" onAction="#abrirGestionEmpleados"/>
-        <Button text="Monitorear Transacciones" onAction="#abrirMonitoreo"/>
-        <Button text="Generar Reportes" onAction="#abrirReportes"/>
+        <Button text="Registrar Cliente" onAction="#onOpenCrudClientes"/>
+        <Button text="Gestionar Empleados" onAction="#onOpenEmpleadoView"/>
+        <Button text="Monitorear Transacciones" onAction="#onOpenTransacciones"/>
     </HBox>
 
     <AnchorPane fx:id="panelContenido" prefHeight="400" prefWidth="600"/>

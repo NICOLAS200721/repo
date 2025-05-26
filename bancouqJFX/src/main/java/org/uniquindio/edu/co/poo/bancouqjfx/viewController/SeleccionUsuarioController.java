@@ -3,6 +3,7 @@ package org.uniquindio.edu.co.poo.bancouqjfx.viewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import org.uniquindio.edu.co.poo.bancouqjfx.App;
+import org.uniquindio.edu.co.poo.bancouqjfx.model.Administrador;
 import org.uniquindio.edu.co.poo.bancouqjfx.model.Cliente;
 
 public class SeleccionUsuarioController {
@@ -122,7 +123,12 @@ public class SeleccionUsuarioController {
     // Validaciones simuladas (puedes reemplazarlas con búsqueda real en Banco)
 
     private boolean validarAdmin(String correo, String contrasena) {
-        return correo.equals("admin@gmail.com") && contrasena.equals("123");
+
+        Administrador administrador = app.banco.buscarAdminPorCorreo(correo);
+        if (administrador != null && administrador.getContraseña().equals(contrasena)) {
+            return true;
+        }
+        return false;
     }
 
     private boolean validarCajero(String correo, String contrasena) {
