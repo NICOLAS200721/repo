@@ -46,6 +46,16 @@ public class SeleccionUsuarioController {
     /**
      * Lógica del botón Ingresar
      */
+    private void mostrarInfo(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private Label lblMensaje;
     @FXML
     public void ingresar() {
         String tipoUsuario = comboTipoUsuario.getValue();
@@ -54,6 +64,13 @@ public class SeleccionUsuarioController {
 
         if (tipoUsuario == null || tipoUsuario.isEmpty()) {
             mostrarAlerta("Error", "Seleccione un tipo de usuario.");
+            return;
+        }
+
+        if (CAJERO.equals(tipoUsuario)) {
+            System.out.println("➡ Entrando como cajero...");
+            mostrarInfo("Acceso como Cajero", "No necesitas login. Ingresando al panel...");
+            app.openCajeroMainView();
             return;
         }
 
@@ -68,9 +85,6 @@ public class SeleccionUsuarioController {
                 break;
             case ADMINISTRADOR:
                 manejarLoginAdministrador(correo, contrasena);
-                break;
-            case CAJERO:
-                manejarLoginCajero(correo, contrasena);
                 break;
             default:
                 mostrarAlerta("Error", "Seleccione un tipo de usuario válido.");
@@ -112,13 +126,13 @@ public class SeleccionUsuarioController {
         }
     }
 
-    private void manejarLoginCajero(String correo, String contrasena) {
-        if (validarCajero(correo, contrasena)) {
-            app.openCajeroMainView();
-        } else {
-            mostrarAlerta("Error", "Credenciales incorrectas para cajero.");
-        }
-    }
+//    private void manejarLoginCajero(String correo, String contrasena) {
+//        if (validarCajero(correo, contrasena)) {
+//            app.openCajeroMainView();
+//        } else {
+//            mostrarAlerta("Error", "Credenciales incorrectas para cajero.");
+//        }
+//    }
 
     // Validaciones simuladas (puedes reemplazarlas con búsqueda real en Banco)
 

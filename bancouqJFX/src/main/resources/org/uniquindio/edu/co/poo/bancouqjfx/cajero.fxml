@@ -3,9 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.geometry.Insets?>
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.CajeroMainController"
-      spacing="10" alignment="TOP_CENTER" prefWidth="600" prefHeight="500" padding="10">
+      spacing="10" alignment="TOP_CENTER" prefWidth="600" prefHeight="500">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
     <Label text="Panel Cajero" style="-fx-font-size: 18px;"/>
 
