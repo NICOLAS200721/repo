@@ -32,53 +32,53 @@ public class AdministradorMainController {
 
     public void setApp(App app) {
         this.app = app;
-        mostrarLoginAdmin();
+//        mostrarLoginAdmin();
     }
 
-    private void mostrarLoginAdmin() {
-        panelContenido.getChildren().clear();
-
-        VBox loginBox = new VBox(10);
-        loginBox.setPrefWidth(400);
-        loginBox.setPrefHeight(300);
-
-        Label lblTitulo = new Label("Login Administrador");
-        lblTitulo.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
-
-        TextField txtUsuario = new TextField();
-        txtUsuario.setPromptText("Usuario");
-
-        PasswordField txtContrasena = new PasswordField();
-        txtContrasena.setPromptText("Contraseña");
-
-        Button btnIngresar = new Button("Ingresar");
-        Button btnRegistrar = new Button("Registrar nuevo admin");
-
-        btnIngresar.setOnAction(e -> {
-            String usuario = txtUsuario.getText().trim();
-            String contrasena = txtContrasena.getText();
-
-            if (usuario.isEmpty() || contrasena.isEmpty()) {
-                mostrarError("Complete todos los campos.");
-                return;
-            }
-
-            boolean existe = administradores.stream()
-                    .anyMatch(admin -> admin.usuario.equals(usuario) && admin.contrasena.equals(contrasena));
-
-            if (existe) {
-                mostrarInfo("Login exitoso.");
-                // Aquí iría tu lógica para cargar panel de administración
-            } else {
-                mostrarError("Usuario o contraseña incorrectos.");
-            }
-        });
-
-        btnRegistrar.setOnAction(e -> mostrarRegistroAdmin());
-
-        loginBox.getChildren().addAll(lblTitulo, txtUsuario, txtContrasena, btnIngresar, btnRegistrar);
-        panelContenido.getChildren().add(loginBox);
-    }
+//    private void mostrarLoginAdmin() {
+//        panelContenido.getChildren().clear();
+//
+//        VBox loginBox = new VBox(10);
+//        loginBox.setPrefWidth(400);
+//        loginBox.setPrefHeight(300);
+//
+//        Label lblTitulo = new Label("Login Administrador");
+//        lblTitulo.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
+//
+//        TextField txtUsuario = new TextField();
+//        txtUsuario.setPromptText("Usuario");
+//
+//        PasswordField txtContrasena = new PasswordField();
+//        txtContrasena.setPromptText("Contraseña");
+//
+//        Button btnIngresar = new Button("Ingresar");
+//        Button btnRegistrar = new Button("Registrar nuevo admin");
+//
+//        btnIngresar.setOnAction(e -> {
+//            String usuario = txtUsuario.getText().trim();
+//            String contrasena = txtContrasena.getText();
+//
+//            if (usuario.isEmpty() || contrasena.isEmpty()) {
+//                mostrarError("Complete todos los campos.");
+//                return;
+//            }
+//
+//            boolean existe = administradores.stream()
+//                    .anyMatch(admin -> admin.usuario.equals(usuario) && admin.contrasena.equals(contrasena));
+//
+//            if (existe) {
+//                mostrarInfo("Login exitoso.");
+//                // Aquí iría tu lógica para cargar panel de administración
+//            } else {
+//                mostrarError("Usuario o contraseña incorrectos.");
+//            }
+//        });
+//
+//        btnRegistrar.setOnAction(e -> mostrarRegistroAdmin());
+//
+//        loginBox.getChildren().addAll(lblTitulo, txtUsuario, txtContrasena, btnIngresar, btnRegistrar);
+//        panelContenido.getChildren().add(loginBox);
+//    }
 
     private void mostrarRegistroAdmin() {
         try {
