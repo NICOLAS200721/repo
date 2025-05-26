@@ -32,7 +32,9 @@ public class GestorTransacciones {
             // Crear y guardar la transacción
             Transaccion t = new Transaccion(
                     origen.getNumeroCuenta(),
+                    origen.getTipoCuenta(),
                     destino.getNumeroCuenta(),
+                    destino.getTipoCuenta(),
                     monto,
                     LocalDateTime.now()
             );
@@ -55,14 +57,18 @@ public class GestorTransacciones {
     public static class Transaccion {
         private String cuentaOrigen;
         private String cuentaDestino;
+        private String tipoCuentaOrigen;
+        private String tipoCuentaDestino;
         private double monto;
         private LocalDateTime fechaHora;
 
-        public Transaccion(String cuentaOrigen, String cuentaDestino, double monto, LocalDateTime fechaHora) {
+        public Transaccion(String tipoCuentaDestino, String tipoCuentaOrigen, String cuentaOrigen, String cuentaDestino, double monto, LocalDateTime fechaHora) {
             this.cuentaOrigen = cuentaOrigen;
             this.cuentaDestino = cuentaDestino;
             this.monto = monto;
             this.fechaHora = fechaHora;
+            this.tipoCuentaOrigen = tipoCuentaOrigen;
+            this.tipoCuentaDestino = tipoCuentaDestino;
         }
 
         public String getCuentaOrigen() {
@@ -79,6 +85,14 @@ public class GestorTransacciones {
 
         public LocalDateTime getFechaHora() {
             return fechaHora;
+        }
+
+        public String getTipoCuentaOrigen() {
+            return tipoCuentaOrigen;
+        }
+
+        public String getTipoCuentaDestino() {
+            return tipoCuentaDestino;
         }
 
         public void setCuentaOrigen(String cuentaOrigen) {

@@ -67,6 +67,14 @@ public class Banco {
         }
         return false;
     }
+    public CuentaBancaria buscarCuenta(String numeroCuenta) {
+        for (CuentaBancaria cuenta : listaCuentas) {
+            if (cuenta.getNumeroCuenta().equals(numeroCuenta)) {
+                return cuenta;
+            }
+        }
+        return null;
+    }
 
     public boolean verificarCliente(String cedula) {
         for (Cliente cliente : clientes) {

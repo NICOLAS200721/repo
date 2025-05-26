@@ -3,10 +3,12 @@ package org.uniquindio.edu.co.poo.bancouqjfx.model;
 public class CuentaBancaria {
     private String numeroCuenta;
     private double saldo;
+    private String tipoCuenta;
 
-    public CuentaBancaria(String numeroCuenta, double saldoInicial) {
+    public CuentaBancaria(String numeroCuenta, double saldo, String tipoCuenta) {
         this.numeroCuenta = numeroCuenta;
-        this.saldo = saldoInicial;
+        this.saldo = saldo;
+        this.tipoCuenta = tipoCuenta.trim().toLowerCase();
     }
 
     public String getNumeroCuenta() {
@@ -35,6 +37,15 @@ public class CuentaBancaria {
         }
         saldo -= cantidad;
         return true;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(String tipoCuenta) {
+
+        this.tipoCuenta = tipoCuenta.trim().toLowerCase();
     }
 
     @Override
