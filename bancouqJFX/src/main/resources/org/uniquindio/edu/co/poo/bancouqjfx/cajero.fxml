@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.CajeroMainController"
+      spacing="10" alignment="TOP_CENTER" prefWidth="600" prefHeight="500" padding="10">
+
+    <Label text="Panel Cajero" style="-fx-font-size: 18px;"/>
+
+    <HBox spacing="10">
+        <Button text="Registrar Clientes" onAction="#abrirCrudCliente"/>
+        <Button text="Realizar Transacciones" onAction="#abrirTransacciones"/>
+        <Button text="Consultar Saldo" onAction="#abrirConsultaSaldo"/>
+        <Button text="Retiros y Depósitos" onAction="#abrirRetirosDepositos"/>
+    </HBox>
+
+    <AnchorPane fx:id="panelContenido" prefHeight="400" prefWidth="600"/>
+
+</VBox>

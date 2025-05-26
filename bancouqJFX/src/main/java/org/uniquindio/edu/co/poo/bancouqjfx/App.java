@@ -2,9 +2,8 @@ package org.uniquindio.edu.co.poo.bancouqjfx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,21 +21,62 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Gestión de Clientes y Transacciones");
-        openViewPrincipal();
+
+        // Mostrar la vista de selección de usuario al iniciar la app
+        openSeleccionUsuarioView();
+    }
+
+    public void openSeleccionUsuarioView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/seleccionusuario.fxml"));
+            Parent rootLayout = loader.load();
+
+            SeleccionUsuarioController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Seleccione Tipo de Usuario");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Método que recibe el tipo de usuario y lo redirige al panel correspondiente
+     */
+    public void loguearUsuario(String tipoUsuario) {
+        inicializarData(); // Si deseas precargar algo al loguear
+        switch (tipoUsuario.toLowerCase()) {
+            case "cliente":
+                openClienteMainView();
+                break;
+            case "administrador":
+                openAdministradorMainView();
+                break;
+            case "cajero":
+                openCajeroMainView();
+                break;
+            default:
+                openViewPrincipal();
+                break;
+        }
     }
 
     public void openViewPrincipal() {
-        inicializarData();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/primary.fxml"));
-            AnchorPane rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
             PrimaryController primaryController = loader.getController();
             primaryController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Vista Principal");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,32 +87,32 @@ public class App extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/crudCliente.fxml"));
-            AnchorPane rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
-            // Aquí asignamos la referencia app al controlador para que pueda usar openViewPrincipal()
             ClienteViewController controller = loader.getController();
             controller.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Gestión Clientes");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-
     public void openTransaccionView() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/transaccionview.fxml"));
-            AnchorPane rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
             TransaccionController controller = loader.getController();
             controller.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Gestión de Transacciones");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,13 +123,14 @@ public class App extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/agregarCuenta.fxml"));
-            AnchorPane rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
             CuentaController controller = loader.getController();
             controller.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Agregar Cuenta");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -100,14 +141,14 @@ public class App extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/empleado.fxml"));
-            AnchorPane rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
-            // Aquí obtienes el controlador y le pasas la instancia 'app'
             EmpleadoController controller = loader.getController();
-            controller.setApp(this);  // IMPORTANTE para que el botón volver funcione
+            controller.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Gestión de Empleados");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,9 +159,7 @@ public class App extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/consultaSaldo.fxml"));
-
-            // CAMBIO: usar VBox si ese es el contenedor raíz
-            VBox rootLayout = loader.load();
+            Parent rootLayout = loader.load();
 
             ConsultaSaldoController controller = loader.getController();
             controller.setApp(this);
@@ -134,8 +173,114 @@ public class App extends Application {
         }
     }
 
+    public void openClienteMainView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/cliente.fxml"));
+            Parent rootLayout = loader.load();
+
+            ClienteMainController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Panel Cliente");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openAdministradorMainView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/administrador.fxml"));
+            Parent rootLayout = loader.load();
+
+            AdministradorMainController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Panel Administrador");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openCajeroMainView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/cajero.fxml"));
+            Parent rootLayout = loader.load();
+
+            CajeroMainController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Panel Cajero");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openRegistroClienteView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/registrarCliente.fxml"));
+            Parent rootLayout = loader.load();
+
+            RegistroClienteController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Registro de Cliente");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void volverAlInicioSegunTipoUsuario(String tipoUsuario) {
+        switch (tipoUsuario.toLowerCase()) {
+            case "cliente":
+                openClienteMainView();
+                break;
+            case "administrador":
+                openAdministradorMainView();
+                break;
+            case "cajero":
+                openCajeroMainView();
+                break;
+            default:
+                openViewPrincipal();
+                break;
+        }
+    }
+    public void openRegistroAdministradorView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/org/uniquindio/edu/co/poo/bancouqjfx/registrarAdministrador.fxml"));
+            Parent rootLayout = loader.load();
+
+            RegistroAdministradorController controller = loader.getController();
+            controller.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Registro de Administrador");
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void inicializarData() {
-        Cliente cliente = new Cliente("Juan", "Pérez", "1223", "juanp@gmail.com", "254695");
+        Cliente cliente = new Cliente("Juan", "Pérez", "1223", "primero@gmail.com", "123");
         banco.agregarCliente(cliente);
     }
 

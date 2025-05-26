@@ -23,7 +23,7 @@
             <Button text="Registrar" onAction="#registrarEmpleado"/>
             <Button text="Modificar" onAction="#modificarEmpleado"/>
             <Button text="Eliminar" onAction="#eliminarEmpleado"/>
-            <Button layoutX="168.0" layoutY="466.0" onAction="#volverAPrincipal" text="Volver" />        </HBox>
+
 
         <ListView fx:id="listaEmpleados" prefHeight="250"/>
     </VBox>

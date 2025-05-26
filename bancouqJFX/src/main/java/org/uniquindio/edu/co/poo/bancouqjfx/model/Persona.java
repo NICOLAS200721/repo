@@ -6,6 +6,7 @@ public abstract class Persona {
     public String apellido;
     public String cedula;
 
+
     public Persona(String nombre, String apellido, String cedula) {
         this.nombre = nombre;
         this.apellido = apellido;

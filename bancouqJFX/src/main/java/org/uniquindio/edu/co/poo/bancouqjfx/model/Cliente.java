@@ -4,10 +4,12 @@ public class Cliente extends Persona {
     private String correo;
     private String contraseña;
 
+
     public Cliente(String nombre, String apellido, String cedula, String correo, String contraseña) {
         super(nombre, apellido, cedula);
         this.correo = correo;
         this.contraseña = contraseña;
+
     }
 
     // Constructor alternativo para vistas sin correo y contraseña

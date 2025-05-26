@@ -34,98 +34,102 @@ public class Banco {
     }
 
     public boolean agregarCliente(Cliente cliente) {
-        boolean centinela = false;
         if (!verificarCliente(cliente.getCedula())) {
             clientes.add(cliente);
-            centinela = true;
+            return true;
         }
-        return centinela;
+        return false;
     }
 
     public boolean eliminarCliente(String cedula) {
-        boolean centinela = false;
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(cedula)) {
                 clientes.remove(cliente);
-                centinela = true;
-                break;
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
     public boolean actualizarCliente(String cedula, Cliente actualizado) {
-        boolean centinela = false;
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(cedula)) {
                 cliente.setCedula(actualizado.getCedula());
                 cliente.setNombre(actualizado.getNombre());
                 cliente.setApellido(actualizado.getApellido());
-                centinela = true;
-                break;
+                // Si quieres actualizar correo y contraseña:
+                cliente.setCorreo(actualizado.getCorreo());
+                cliente.setContraseña(actualizado.getContraseña());
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
     public boolean verificarCliente(String cedula) {
-        boolean centinela = false;
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(cedula)) {
-                centinela = true;
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
+    // Nuevo método para buscar cliente por correo
+    public Cliente buscarClientePorCorreo(String correo) {
+        if (correo == null) return null;
+        for (Cliente cliente : clientes) {
+            if (correo.equalsIgnoreCase(cliente.getCorreo())) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    // Métodos para cuentas bancarias
     public Collection<CuentaBancaria> getListaCuentas() {
         return listaCuentas;
     }
 
     public boolean agregarCuenta(CuentaBancaria cuenta) {
-        boolean centinela = false;
         if (!verificarcuenta(cuenta.getNumeroCuenta())) {
             listaCuentas.add(cuenta);
-            centinela = true;
+            return true;
         }
-        return centinela;
+        return false;
     }
 
     public boolean eliminarCuentas(String numeroCuenta) {
-        boolean centinela = false;
         for (CuentaBancaria cuentaBancaria : listaCuentas) {
             if (cuentaBancaria.getNumeroCuenta().equals(numeroCuenta)) {
                 listaCuentas.remove(cuentaBancaria);
-                centinela = true;
-                break;
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
     public boolean actualizarCuentas(String numeroCuenta, CuentaBancaria actualizada) {
-        boolean centinela = false;
         for (CuentaBancaria cuentaBancaria : listaCuentas) {
             if (cuentaBancaria.getNumeroCuenta().equals(numeroCuenta)) {
                 cuentaBancaria.setNumeroCuenta(actualizada.getNumeroCuenta());
                 cuentaBancaria.setSaldo(actualizada.getSaldo());
-                centinela = true;
-                break;
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
     public boolean verificarcuenta(String numeroCuenta) {
-        boolean centinela = false;
         for (CuentaBancaria cuentaBancaria : listaCuentas) {
             if (cuentaBancaria.getNumeroCuenta().equals(numeroCuenta)) {
-                centinela = true;
+                return true;
             }
         }
-        return centinela;
+        return false;
     }
 
+    // Métodos para transacciones
     public boolean agregarTransaccion(Transaccion nuevaTransaccion) {
         if (!verificarTransaccion(nuevaTransaccion.getCuentaOrigen(), nuevaTransaccion.getCuentaDestino())) {
             historialTransacciones.add(nuevaTransaccion);

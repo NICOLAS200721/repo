@@ -3,20 +3,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="420" prefWidth="400" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.CuentaController">
+<AnchorPane prefHeight="420.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.uniquindio.edu.co.poo.bancouqjfx.viewController.CuentaController">
 
-    <Label layoutX="20" layoutY="20" text="Número de Cuenta:" />
-    <TextField fx:id="txtNumeroCuenta" layoutX="150" layoutY="15" prefWidth="200" />
+    <children>
 
-    <Label layoutX="20" layoutY="60" text="Saldo:" />
-    <TextField fx:id="txtSaldo" layoutX="150" layoutY="55" prefWidth="200" />
+        <Label layoutX="20" layoutY="20" text="Número de Cuenta:"/>
+        <TextField fx:id="txtNumeroCuenta" layoutX="150" layoutY="15" prefWidth="200"/>
 
-    <Button layoutX="20" layoutY="100" onAction="#agregarCuenta" prefWidth="100" text="Agregar" />
-    <Button layoutX="130" layoutY="100" onAction="#eliminarCuenta" prefWidth="100" text="Eliminar" />
-    <Button layoutX="240" layoutY="100" onAction="#actualizarCuenta" prefWidth="100" text="Actualizar" />
-    <Button layoutX="170.0" layoutY="380.0" onAction="#volverAPrincipal" text="Volver" />
+        <Label layoutX="20" layoutY="60" text="Saldo:"/>
+        <TextField fx:id="txtSaldo" layoutX="150" layoutY="55" prefWidth="200"/>
 
-    <Label fx:id="lblMensaje" layoutX="20" layoutY="140" prefWidth="350" style="-fx-text-fill: red;" text="" />
+        <Button layoutX="20" layoutY="100" onAction="#agregarCuenta" prefWidth="100" text="Agregar"/>
+        <Button layoutX="130" layoutY="100" onAction="#eliminarCuenta" prefWidth="100" text="Eliminar"/>
+        <Button layoutX="240" layoutY="100" onAction="#actualizarCuenta" prefWidth="100" text="Actualizar"/>
 
-    <ListView fx:id="listaCuentas" layoutX="20" layoutY="170" onMouseClicked="#seleccionarCuenta" prefHeight="200" prefWidth="360" />
+
+
+
+        <Label fx:id="lblMensaje" layoutX="20" layoutY="140" prefWidth="350" style="-fx-text-fill: red;" text=""/>
+
+        <ListView fx:id="listaCuentas" layoutX="20" layoutY="170" onMouseClicked="#seleccionarCuenta" prefHeight="200" prefWidth="360"/>
+
+    </children>
 </AnchorPane>
